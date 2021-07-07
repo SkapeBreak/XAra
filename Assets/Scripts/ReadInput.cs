@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class ReadInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Vector3 vect;
+    
+    private string input;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(vect * Time.deltaTime);
+        
     }
 
+    public void ReadStringInput(string s)
+    {
+        input = s;
+        Debug.Log(input);
+    }
 }
-
