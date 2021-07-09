@@ -9,6 +9,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -98,17 +105,6 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "com.unity.xr.arcore": {
-      "version": "4.1.7",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.xr.arsubsystems": "4.1.7",
-        "com.unity.xr.management": "4.0.1",
-        "com.unity.modules.androidjni": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.xr.arfoundation": {
       "version": "4.1.3",
       "depth": 0,
@@ -116,6 +112,17 @@
       "dependencies": {
         "com.unity.xr.arsubsystems": "4.1.3",
         "com.unity.xr.management": "3.2.17"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.xr.arkit": {
+      "version": "4.1.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0",
+        "com.unity.xr.arsubsystems": "4.1.7",
+        "com.unity.xr.management": "4.0.1"
       },
       "url": "https://packages.unity.com"
     },
