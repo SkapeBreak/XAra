@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/ARView.unity
+- path: Assets/Scenes/MapPage.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

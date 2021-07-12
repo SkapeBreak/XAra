@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637614651490069922
-    m_Hash: 3765520193
+      ticks: 637615341154877224
+    m_Hash: 3162900339
   m_LockFileStatus:
     m_FilePath: C:/Users/andyb/GDrive/Education/EvolveU/Projects/Project3/XAra/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637614651490149727
-    m_Hash: 3975904838
+      ticks: 637615341154897175
+    m_Hash: 4028096725
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
