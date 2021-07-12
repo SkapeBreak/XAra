@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
-{
-    public string SceneName;
-    
-    public void ChangeToScene()
+{   
+    public void ChangeToHome()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene("LandingPage");
+    }
+        public void ChangeToPath()
+    {
+        SceneManager.LoadScene("MapPage");
+    }
+        public void ChangeToARView()
+    {
+        SceneManager.LoadScene("ARView");
     }
 }
