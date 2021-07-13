@@ -14,6 +14,7 @@ public class ActivityButton : MonoBehaviour
     [SerializeField]
     private Text activityDifficulty;
 
+
 public void SetActivityName(string textString) 
 {
     activityName.text = textString;
