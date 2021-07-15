@@ -18,25 +18,20 @@ public class GetMethod : MonoBehaviour
     IEnumerator GetData_Coroutine()
     {
         outputArea.text = "Loading...";
-        Debug.Log("trying to connect...");
+        string uri = "http://localhost:3000/activities";
 
-        string uri = "https://localhost:3000/activities";
-        
-        Debug.Log("still trying to connect...");
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
-            Debug.Log("inside webRequest");
             yield return webRequest.SendWebRequest();
 
             if (webRequest.isNetworkError || webRequest.isHttpError)
             {
-                outputArea.text = webRequest.error;
                 Debug.Log("inside if");
+                outputArea.text = webRequest.error;
             }
             else
             {
                 outputArea.text = webRequest.downloadHandler.text;
-                Debug.Log("inside else");
             }
         }
     }
