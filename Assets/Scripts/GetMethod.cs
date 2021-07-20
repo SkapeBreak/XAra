@@ -26,7 +26,6 @@ public class GetMethod : MonoBehaviour
 
             if (webRequest.isNetworkError || webRequest.isHttpError)
             {
-                Debug.Log("inside if");
                 outputArea.text = webRequest.error;
             }
             else
