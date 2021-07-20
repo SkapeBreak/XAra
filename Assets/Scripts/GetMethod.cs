@@ -6,10 +6,12 @@ using UnityEngine.Networking;
 public class GetMethod : MonoBehaviour
 {
     InputField outputArea;
+    InputField overview;
  
     void Start()
     {
         outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
+        overview = GameObject.Find("Overview").GetComponent<InputField>();
         GameObject.Find("GetButton").GetComponent<Button>().onClick.AddListener(GetData);
     }
  
@@ -17,9 +19,8 @@ public class GetMethod : MonoBehaviour
  
     IEnumerator GetData_Coroutine()
     {
-        Debug.Log("Bug");
-        
         outputArea.text = "Loading...";
+        overview.text = "Loading...";
         string uri = "http://50.66.79.240:4000/activities";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
@@ -30,10 +31,12 @@ public class GetMethod : MonoBehaviour
             {
                 Debug.Log("inside if");
                 outputArea.text = webRequest.error;
+                overview.text = webRequest.error;
             }
             else
             {
                 outputArea.text = webRequest.downloadHandler.text;
+                overview.text = webRequest.downloadHandler.text;
             }
         }
     }
