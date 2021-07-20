@@ -21,7 +21,7 @@ public class GetMethod : MonoBehaviour
     {
         outputArea.text = "Loading...";
         overview.text = "Loading...";
-        string uri = "http://50.66.79.240:4000/activities";
+        string uri = "http://localhost:3000/activities";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {

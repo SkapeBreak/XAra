@@ -2516,8 +2516,8 @@ GameObject:
   - component: {fileID: 777111037}
   - component: {fileID: 777111036}
   - component: {fileID: 777111035}
-  - component: {fileID: 777111038}
   - component: {fileID: 777111039}
+  - component: {fileID: 777111038}
   m_Layer: 5
   m_Name: ActivityList
   m_TagString: Untagged
@@ -2622,7 +2622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 777111033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f2510663909d848b44dc12c2b4c0ca, type: 3}
+  m_Script: {fileID: 11500000, guid: e3cb27b4fd9e64147ad37cc04dba33b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activityCardTemplate: {fileID: 2001075394}
