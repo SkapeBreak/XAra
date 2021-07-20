@@ -541,7 +541,7 @@ PlayerSettings:
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
   cameraUsageDescription: Required for augmented reality support.
-  locationUsageDescription: Send location.
+  locationUsageDescription: Required for map support.
   microphoneUsageDescription: 
   switchNMETAOverride: 
   switchNetLibKey: 
