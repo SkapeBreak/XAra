@@ -17,8 +17,10 @@ public class GetMethod : MonoBehaviour
  
     IEnumerator GetData_Coroutine()
     {
+        Debug.Log("Bug");
+        
         outputArea.text = "Loading...";
-        string uri = "http://localhost:3000/activities";
+        string uri = "http://50.66.79.240:4000/activities";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
