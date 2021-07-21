@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class ActivityPopUpWindow : MonoBehaviour
 {
-
     [SerializeField] GameObject popup;
-
 
     public void Open()
     {        
