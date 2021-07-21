@@ -14,6 +14,10 @@ public class GetActivityList : MonoBehaviour
     GameObject activityId;
     JSONNode activitiesParse;
     public static string activityOverviewText;
+    public static string activityName;
+    public static string activityDistance;
+    public static string activityElevation;
+    public static string activityDifficulty;
     
     void Start()
     {
@@ -24,13 +28,17 @@ public class GetActivityList : MonoBehaviour
     {
         activityId = EventSystem.current.currentSelectedGameObject;
         activityOverviewText = activitiesParse[activityId.name]["description"];
+        activityName = activitiesParse[activityId.name]["name"];
+        activityDistance = activitiesParse[activityId.name]["stats"]["distance"];
+        activityElevation = activitiesParse[activityId.name]["stats"]["elevation"];
+        activityDifficulty = activitiesParse[activityId.name]["difficulty"];
         activityDescription.SetActive(true);
     }
 
     IEnumerator GetActivityData()
     {
 
-        string uri = "http://localhost:3000/activities/";
+        string uri = "http://localhost:3000/activities";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -54,7 +62,7 @@ public class GetActivityList : MonoBehaviour
                     
                     activityCard.GetComponent<ActivityButton>().SetActivityName(activitiesParse[i]["name"]);
                     activityCard.GetComponent<ActivityButton>().SetActivityLocation(activitiesParse[i]["location"]);
-                    activityCard.GetComponent<ActivityButton>().SetActivityStats(activitiesParse[i]["stats"]);
+                    activityCard.GetComponent<ActivityButton>().SetActivityStats(activitiesParse[i]["stats"]["distance"] + ", " + activitiesParse[i]["stats"]["time"]);
                     activityCard.GetComponent<ActivityButton>().SetActivityDifficulty(activitiesParse[i]["difficulty"]);
 
                     activityCard.transform.SetParent(activityCardTemplate.transform.parent, false);
