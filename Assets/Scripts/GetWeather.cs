@@ -10,12 +10,11 @@ public class GetWeather : MonoBehaviour
 {
    
    InputField outputArea;
-    //InputField overview;
+
  
     void Start()
     {
         outputArea = GameObject.Find("OutputAreaWeather").GetComponent<InputField>();
-        //overview = GameObject.Find("Overview").GetComponent<InputField>();
         GameObject.Find("GetWeather").GetComponent<Button>().onClick.AddListener(GetData);
     }
  
@@ -23,8 +22,6 @@ public class GetWeather : MonoBehaviour
  
     IEnumerator GetData_Coroutine()
     {
-        outputArea.text = "Loading...";
-        //overview.text = "Loading...";
         string uri = "https://api.openweathermap.org/data/2.5/weather?lat=51.056442&lon=-114.069333&units=metric&APPID=c24bbbe6090072b0f620ea57d0ce8764";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
@@ -43,46 +40,7 @@ public class GetWeather : MonoBehaviour
 
         }
         }
-    }
-   
-//    InputField Content = null;
-
-//    InputField overview;
-
-//    //Text temperature;
-
-//    void Start()
-//    {
-//         Content = GameObject.Find("OutputAreaWeather").GetComponent<InputField>();
-//         overview = GameObject.Find("Overview").GetComponent<InputField>();
-//         GameObject.Find("GetWeather").GetComponent<Button>().onClick.AddListener(GetData);
-//    } 
-
-//    void GetData() => StartCoroutine(GetData_Coroutine()); 
-
-//    IEnumerator GetData_Coroutine()
-//     {
-//         Content.text = "Loading...";
-//         string uri = "https://api.openweathermap.org/data/2.5/weather?lat=51.056442&lon=-114.069333&units=metric&APPID=c24bbbe6090072b0f620ea57d0ce8764";
-
-//         using (UnityWebRequest  request = UnityWebRequest.Get(uri))
-//         {
-//         yield return request.SendWebRequest();
-//         if (request.isNetworkError|| request.isHttpError)
-//         {
-//             Debug.Log(request.error);
-//         }else
-//         {
-//             var weather = JsonConvert.DeserializeObject<weatherResponse>(request.downloadHandler.text);
-
-//             //temperature = GameObject.Find("Text").GetComponent<Text>();
-//             Content.text = weather.main.temp.ToString();
-//             Debug.Log("let me click");
-
-//         }
-//         }
-//     }
-        
+    }        
 }
 
 
