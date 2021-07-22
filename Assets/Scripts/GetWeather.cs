@@ -10,7 +10,7 @@ public class GetWeather : MonoBehaviour
 {   
    InputField outputArea;
 
-    void Start()
+    void Update()
     {
         StartCoroutine(GetWeatherData());
     }
