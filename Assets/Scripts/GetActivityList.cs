@@ -10,14 +10,15 @@ using System;
 public class GetActivityList : MonoBehaviour
 {
     [SerializeField] private GameObject activityCardTemplate;
-    [SerializeField] GameObject activityDescription;
+    [SerializeField] GameObject popUpActivityDescription;
     GameObject activityId;
     JSONNode activitiesParse;
-    public static string activityOverviewText;
+    public static string activityDescription;
     public static string activityName;
     public static string activityDistance;
     public static string activityElevation;
     public static string activityDifficulty;
+    public static string activityRating;
     
     void Start()
     {
@@ -27,12 +28,13 @@ public class GetActivityList : MonoBehaviour
     void OpenPopUp()
     {
         activityId = EventSystem.current.currentSelectedGameObject;
-        activityOverviewText = activitiesParse[activityId.name]["description"];
+        activityDescription = activitiesParse[activityId.name]["description"];
         activityName = activitiesParse[activityId.name]["name"];
         activityDistance = activitiesParse[activityId.name]["stats"]["distance"];
         activityElevation = activitiesParse[activityId.name]["stats"]["elevation"];
         activityDifficulty = activitiesParse[activityId.name]["difficulty"];
-        activityDescription.SetActive(true);
+        activityRating = activitiesParse[activityId.name]["rating"];
+        popUpActivityDescription.SetActive(true);
     }
 
     IEnumerator GetActivityData()
