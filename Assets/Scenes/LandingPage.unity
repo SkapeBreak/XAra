@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 95847744}
   - component: {fileID: 95847743}
   m_Layer: 5
-  m_Name: Chat
+  m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 309348406}
   - component: {fileID: 309348405}
   m_Layer: 5
-  m_Name: ChatIcon
+  m_Name: SettingsIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 846530d98c9c34f0282a9de72b04208e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 84b6e71ae7e545e41add31295caf6be4, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8161,7 +8161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 6bfc9d8f096b64ceba8572d52e1a3c93, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5e3593ddd97094c48ab9dc3aa06cecad, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
