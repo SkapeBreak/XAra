@@ -1592,7 +1592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 462527065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af55396951d1bb468a4756f78ad3591, type: 3}
+  m_Script: {fileID: 11500000, guid: d42577e5ce67aa940856d5185fa855a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &462527070
@@ -1640,8 +1640,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 462527069}
-        m_TargetAssemblyTypeName: GetMenu, Assembly-CSharp
-        m_MethodName: GetMenuOnClick
+        m_TargetAssemblyTypeName: OpenLink, Assembly-CSharp
+        m_MethodName: OpenLinkOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 859192899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b409b88a66fc84bb843323ce6b80ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d42577e5ce67aa940856d5185fa855a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &859192904
@@ -3143,8 +3143,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 859192903}
-        m_TargetAssemblyTypeName: GetAddress, Assembly-CSharp
-        m_MethodName: GetAddressOnClick
+        m_TargetAssemblyTypeName: OpenLink, Assembly-CSharp
+        m_MethodName: OpenLinkOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
