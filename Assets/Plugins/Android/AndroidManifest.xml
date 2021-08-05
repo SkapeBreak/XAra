@@ -12,11 +12,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
+<<<<<<< HEAD
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="unitydl" android:host="mylink" />
           </intent-filter>
+=======
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="unitydl" android:host="mylink" />
+            </intent-filter>
+>>>>>>> ae9e17b658f6000c4c180c3a62028dd45bd3f61d
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>
     </application>
