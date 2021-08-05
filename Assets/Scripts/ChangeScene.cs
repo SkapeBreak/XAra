@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {   
-    public void ChangeToHome()
+    public void ChangeToLocalAttractions()
     {
-        SceneManager.LoadScene("LandingPage");
+        SceneManager.LoadScene("LocalAttractionsPage");
     }
         public void ChangeToPath()
     {
@@ -16,5 +16,9 @@ public class ChangeScene : MonoBehaviour
         public void ChangeToARView()
     {
         SceneManager.LoadScene("ARView");
+    }
+       public void ChangeToHome()
+    {
+        SceneManager.LoadScene("HomePage");
     }
 }
