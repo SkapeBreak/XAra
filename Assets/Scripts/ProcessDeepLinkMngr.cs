@@ -9,8 +9,7 @@ public class ProcessDeepLinkMngr : MonoBehaviour
     public string deeplinkURL;
     private void Awake()
     {
-        void start(){
-                    if (Instance == null)
+    if (Instance == null)
         {
             Instance = this;                
             Application.deepLinkActivated += onDeepLinkActivated;
@@ -26,7 +25,6 @@ public class ProcessDeepLinkMngr : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
         }
     }
  
@@ -52,7 +50,6 @@ public class ProcessDeepLinkMngr : MonoBehaviour
                 validScene = false;
                 break;
         }
-        if (validScene) 
-        SceneManager.LoadScene(sceneName);
+        if (validScene) SceneManager.LoadScene(sceneName);
     }
 }
