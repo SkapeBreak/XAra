@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ProcessDeepLinkMngr : MonoBehaviour
 {
+    [SerializeField] GameObject BookCanvas;
     public static ProcessDeepLinkMngr Instance { get; private set; }
     public string deeplinkURL;
     private void Awake()
@@ -50,6 +52,10 @@ public class ProcessDeepLinkMngr : MonoBehaviour
                 validScene = false;
                 break;
         }
-        if (validScene) SceneManager.LoadScene(sceneName);
+        if (validScene) 
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        if(sceneName == "HomePage"){
+            BookCanvas.SetActive(true);
+        }
     }
 }
