@@ -53,7 +53,7 @@ public class ProcessDeepLinkMngr : MonoBehaviour
                 break;
         }
         if (validScene) 
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         if(sceneName == "HomePage"){
             BookCanvas.SetActive(true);
         }
