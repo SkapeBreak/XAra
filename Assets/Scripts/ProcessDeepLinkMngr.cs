@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ProcessDeepLinkMngr : MonoBehaviour
 {
-    [SerializeField] GameObject BookCanvas;
     public static ProcessDeepLinkMngr Instance { get; private set; }
     public string deeplinkURL;
     private void Awake()
@@ -29,7 +28,8 @@ public class ProcessDeepLinkMngr : MonoBehaviour
             Destroy(gameObject);
         }
     }
- 
+
+
     private void onDeepLinkActivated(string url)
     {
         // Update DeepLink Manager global variable, so URL can be accessed from anywhere.
@@ -42,10 +42,13 @@ public class ProcessDeepLinkMngr : MonoBehaviour
         bool validScene;
         switch (sceneName)
         {
-            case "HomePage":
+            case "laundrymachine":
                 validScene = true;
                 break;
-            case "LocalAttractionsPage":
+            case "toilet":
+                validScene = true;
+                break;
+            case "washingmachine":
                 validScene = true;
                 break;
             default:
@@ -53,9 +56,11 @@ public class ProcessDeepLinkMngr : MonoBehaviour
                 break;
         }
         if (validScene) 
-        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        if(sceneName == "HomePage"){
-            BookCanvas.SetActive(true);
+        {
+            SceneManager.LoadScene("bookcanvaspage");
+            
         }
     }
+
+
 }
