@@ -74,10 +74,7 @@ public class GetRestaurantList : MonoBehaviour
                     restaurantCard.name = i.ToString();
 
                     restaurantCard.GetComponent<RestaurantButton>().SetRestaurantName(restaurantsParse[i]["name"]);
-                    restaurantCard.GetComponent<RestaurantButton>().SetRestaurantAddress(restaurantsParse[i]["address"]);
-                    restaurantCard.GetComponent<RestaurantButton>().SetRestaurantPhone(restaurantsParse[i]["phone"]);
                     restaurantCard.GetComponent<RestaurantButton>().SetRestaurantSchedule(restaurantsParse[i]["schedule"]);
-                    restaurantCard.GetComponent<RestaurantButton>().SetRestaurantMenu(restaurantsParse[i]["menu"]);
                     restaurantCard.GetComponent<RestaurantButton>().SetRestaurantRating(restaurantsParse[i]["rating"]);
 
                     restaurantCard.transform.SetParent(restaurantCardTemplate.transform.parent, false);
