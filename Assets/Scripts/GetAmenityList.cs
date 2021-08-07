@@ -12,8 +12,10 @@ public class GetAmenityList : MonoBehaviour
     [SerializeField] private GameObject amenityCardTemplate;
     [SerializeField] GameObject popUpAmenityDescription;
     [SerializeField] GameObject amenityIconTemplate;
+    [SerializeField] GameObject closeX;
 
     GameObject amenityId;
+    GameObject endpoint;
     JSONNode amenitiesParse;
 
     public static string amenityName;
@@ -22,6 +24,11 @@ public class GetAmenityList : MonoBehaviour
     public static string amenityWebsite;
     public static string amenityHours;
     public static string amenityRating;
+
+    void Start() 
+    {
+        closeX.SetActive(false);
+    }
     
     public void AmenityOnClick()
     {
@@ -31,7 +38,6 @@ public class GetAmenityList : MonoBehaviour
     void OpenPopUp()
     {
         amenityId = EventSystem.current.currentSelectedGameObject;
-        Debug.Log(amenityId);
 
         amenityName = amenitiesParse[amenityId.name]["name"];
         amenityAddress = amenitiesParse[amenityId.name]["address"];
@@ -50,8 +56,10 @@ public class GetAmenityList : MonoBehaviour
 
     IEnumerator GetAmenityData()
     {
+        closeX.SetActive(true);
+        endpoint = EventSystem.current.currentSelectedGameObject;
 
-        string uri = "http://localhost:3000/restaurants";
+        string uri = "http://localhost:3000/" + endpoint.name;
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
