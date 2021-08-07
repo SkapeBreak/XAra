@@ -33,6 +33,30 @@ namespace epoching.easy_qr_code
         {
             yield return new WaitForSeconds(0.11f);
 
+            // WebCamDevice[] devices = WebCamTexture.devices;
+
+            // if (devices.length == 0)
+            // {
+            //     Debug.Log("no camera detected");
+            //     camAvailable = false;
+            //     return;
+            // }
+
+            // for (int i = 0; i < devices.length; i++)
+            // {
+            //     if (!devices[i].isFrontFacing)
+            //     {
+            //         cam_texture = new WebCamTexture(devices[i].name, cam_texture.width, cam_texture.height);
+            //     }
+            // }
+            // if (cam_texture == null)
+            // {
+            //     Debug.Log("Unable to Find Camera");
+            //     return;
+            // }
+
+            // cam_texture.Play();
+            
             //init camera texture
             this.cam_texture = new WebCamTexture();
 
@@ -43,7 +67,9 @@ namespace epoching.easy_qr_code
             this.cam_texture.requestedHeight = 720;
 
 
-            this.cam_texture.Play();
+            // Application.RequestUserAuthorization();
+            
+            
 
             if (Application.platform == RuntimePlatform.Android)
             {
@@ -62,6 +88,8 @@ namespace epoching.easy_qr_code
                 this.raw_image_video.rectTransform.localScale = new Vector3(-1, 1, 1);
             }
 
+            this.cam_texture.Play();
+            
             this.raw_image_video.texture = cam_texture;
 
             this.is_reading = true;

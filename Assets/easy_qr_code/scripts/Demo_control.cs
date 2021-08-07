@@ -13,9 +13,11 @@ namespace epoching.easy_qr_code
         //singleton
         public static Demo_control instance;
 
-        //public WebCamTexture cam_texture;
+        public WebCamTexture cam_texture;
 
         private Demo_statu demo_statu;  //the statu of the demo
+
+        private bool camAvailable;
 
         [Header("main gameobject, read_qr_code gameobject,generate_qr_code gameobject")]
         public GameObject game_obj_main;
@@ -31,10 +33,11 @@ namespace epoching.easy_qr_code
 
         void Start()
         {
+            
             new WebCamTexture(WebCamTexture.devices[0].name);
 
-            //WebCamTexture cam_texture = new WebCamTexture();
-            //cam_texture.Play();
+            // WebCamTexture cam_texture = new WebCamTexture();
+            // cam_texture.Play();
         }
 
         public void change_to_main()

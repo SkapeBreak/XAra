@@ -29,11 +29,11 @@ public class QR_code_tool : MonoBehaviour
 
         try
         {
-            //init camera texture
+            // init camera texture
             this.cam_texture = new WebCamTexture();
 
-            //if (cam_texture != null)
-            //{
+            if (cam_texture != null)
+            {
                 this.cam_texture.Play();
 
 
@@ -48,7 +48,7 @@ public class QR_code_tool : MonoBehaviour
                 }
 
                 this.raw_image_video.texture = cam_texture;
-            //}
+            }
         }
         catch (Exception ex)
         {
