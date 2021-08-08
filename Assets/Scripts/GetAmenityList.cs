@@ -81,10 +81,7 @@ public class GetAmenityList : MonoBehaviour
                     amenityCard.name = i.ToString();
 
                     amenityCard.GetComponent<AmenityButton>().SetAmenityName(amenitiesParse[i]["name"]);
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityAddress(amenitiesParse[i]["address"]);
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityPhone(amenitiesParse[i]["phone"]);
                     amenityCard.GetComponent<AmenityButton>().SetAmenityHours(amenitiesParse[i]["hours"]);
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityWebsite(amenitiesParse[i]["website"]);
                     amenityCard.GetComponent<AmenityButton>().SetAmenityRating(amenitiesParse[i]["rating"]);
 
                     amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
