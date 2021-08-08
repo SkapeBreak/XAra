@@ -12,6 +12,7 @@ public class GetAmenityList : MonoBehaviour
     [SerializeField] private GameObject amenityCardTemplate;
     [SerializeField] GameObject popUpAmenityDescription;
     [SerializeField] GameObject amenityIconTemplate;
+    [SerializeField] GameObject amenityContent;
     [SerializeField] GameObject closeX;
 
     GameObject amenityId;
@@ -24,11 +25,6 @@ public class GetAmenityList : MonoBehaviour
     public static string amenityWebsite;
     public static string amenityHours;
     public static string amenityRating;
-
-    void Start() 
-    {
-        closeX.SetActive(false);
-    }
     
     public void AmenityOnClick()
     {
@@ -57,6 +53,8 @@ public class GetAmenityList : MonoBehaviour
     IEnumerator GetAmenityData()
     {
         closeX.SetActive(true);
+        amenityContent.SetActive(true);
+
         endpoint = EventSystem.current.currentSelectedGameObject;
 
         string uri = "http://localhost:3000/" + endpoint.name;
@@ -91,12 +89,10 @@ public class GetAmenityList : MonoBehaviour
 
                     amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
 
-                    amenityIconTemplate.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("amenityIcons/" + i.ToString());
+                    amenityIconTemplate.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("AmenityIcons/" + endpoint.name + "/" + i.ToString());
                 }
-                GameObject.Find("Restaurants").SetActive(false);
-                GameObject.Find("Museums").SetActive(false);
-                GameObject.Find("Parks").SetActive(false);
-                GameObject.Find("Hikes").SetActive(false);
+                
+                GameObject.Find("HostRecommendationCanvas").SetActive(false);
             }
         }
     } 
