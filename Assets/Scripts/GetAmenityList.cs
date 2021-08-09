@@ -57,7 +57,7 @@ public class GetAmenityList : MonoBehaviour
 
         endpoint = EventSystem.current.currentSelectedGameObject;
 
-        string uri = "http://localhost:3000/" + endpoint.name;
+        string uri = "http://localhost:4000/" + endpoint.name;
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
