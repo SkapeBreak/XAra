@@ -17,4 +17,8 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("ARView");
     }
+        public void ChangeToDemo()
+    {
+        SceneManager.LoadScene("Demo");
+    }
 }
