@@ -2077,6 +2077,7 @@ MonoBehaviour:
   amenityName: {fileID: 1989357114}
   amenityHours: {fileID: 1117224851}
   amenityRating: {fileID: 1316425204}
+  amenityIcon: {fileID: 750366732}
 --- !u!114 &514924514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4226,7 +4227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amenityCardTemplate: {fileID: 514924511}
   popUpAmenityDescription: {fileID: 413942312}
-  amenityIconTemplate: {fileID: 750366730}
   amenityContent: {fileID: 403099117}
   closeX: {fileID: 1174541898}
 --- !u!1 &1128048417
@@ -5798,7 +5798,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amenityCardTemplate: {fileID: 514924511}
   popUpAmenityDescription: {fileID: 413942312}
-  amenityIconTemplate: {fileID: 750366730}
   amenityContent: {fileID: 403099117}
   closeX: {fileID: 1174541898}
 --- !u!1 &1337871949
@@ -6568,7 +6567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amenityCardTemplate: {fileID: 514924511}
   popUpAmenityDescription: {fileID: 413942312}
-  amenityIconTemplate: {fileID: 750366730}
   amenityContent: {fileID: 403099117}
   closeX: {fileID: 1174541898}
 --- !u!1 &1446877613
@@ -9490,7 +9488,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amenityCardTemplate: {fileID: 514924511}
   popUpAmenityDescription: {fileID: 413942312}
-  amenityIconTemplate: {fileID: 750366730}
   amenityContent: {fileID: 403099117}
   closeX: {fileID: 1174541898}
 --- !u!1 &2130524864
