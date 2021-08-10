@@ -1,13 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.Networking;
+using System.Collections.Generic;
+using System;
 
 public class AmenityButton : MonoBehaviour
 {
     [SerializeField] private Text amenityName;
     [SerializeField] private Text amenityHours;
     [SerializeField] private Text amenityRating;
+    [SerializeField] private RawImage amenityIcon;
 
     public void SetAmenityName(string textString) 
     {
@@ -22,5 +26,10 @@ public class AmenityButton : MonoBehaviour
     public void SetAmenityRating(string textString) 
     {
         amenityRating.text = textString;
+    }
+
+    public void SetAmenityIcon(string textString) 
+    {
+        amenityIcon.texture = Resources.Load<Texture2D>("AmenityIcons/" + textString);
     }
 }

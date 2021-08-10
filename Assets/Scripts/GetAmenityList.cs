@@ -11,7 +11,6 @@ public class GetAmenityList : MonoBehaviour
 {
     [SerializeField] private GameObject amenityCardTemplate;
     [SerializeField] GameObject popUpAmenityDescription;
-    [SerializeField] GameObject amenityIconTemplate;
     [SerializeField] GameObject amenityContent;
     [SerializeField] GameObject closeX;
 
@@ -78,15 +77,15 @@ public class GetAmenityList : MonoBehaviour
                     amenityCard.SetActive(true);
 
                     amenityCard.GetComponent<Button>().onClick.AddListener(OpenPopUp);
+                    
                     amenityCard.name = i.ToString();
-
+ 
                     amenityCard.GetComponent<AmenityButton>().SetAmenityName(amenitiesParse[i]["name"]);
                     amenityCard.GetComponent<AmenityButton>().SetAmenityHours(amenitiesParse[i]["hours"]);
                     amenityCard.GetComponent<AmenityButton>().SetAmenityRating(amenitiesParse[i]["rating"]);
+                    amenityCard.GetComponent<AmenityButton>().SetAmenityIcon(endpoint.name + "/" + i.ToString());
 
                     amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
-
-                    amenityIconTemplate.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("AmenityIcons/" + endpoint.name + "/" + i.ToString());
                 }
                 
                 GameObject.Find("HostRecommendationCanvas").SetActive(false);
