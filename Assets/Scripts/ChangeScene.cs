@@ -9,15 +9,19 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("LandingPage");
     }
-        public void ChangeToPath()
+    public void ChangeToHostRecommendations()
     {
-        SceneManager.LoadScene("MapPage");
+        SceneManager.LoadScene("HostRecommendations");
     }
-        public void ChangeToARView()
+    public void ChangeToGuestBook()
+    {
+        SceneManager.LoadScene("GuestBook");
+    }
+    public void ChangeToARView()
     {
         SceneManager.LoadScene("ARView");
     }
-        public void ChangeToDemo()
+    public void ChangeToDemo()
     {
         SceneManager.LoadScene("Demo");
     }
