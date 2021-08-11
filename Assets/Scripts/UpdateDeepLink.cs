@@ -18,8 +18,7 @@ public class UpdateDeepLink : MonoBehaviour
     {
         //Get Deep link value from global deeplink manager
         var label = GetComponent<Text>();
-        // string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
-        string deeplinkID = "unitydl://mylink?1";
+        string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
         
         string manualName = deeplinkID.Split("?"[0])[1];
         StartCoroutine(GetManualData(manualName));
