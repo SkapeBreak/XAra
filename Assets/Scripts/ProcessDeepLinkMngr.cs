@@ -48,6 +48,9 @@ public class ProcessDeepLinkMngr : MonoBehaviour
             case "1":
                 validScene = true;
                 break;
+            case "2":
+                validScene = true;
+                break;
             case "washingmachine":
                 validScene = true;
                 break;
