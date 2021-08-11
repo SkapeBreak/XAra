@@ -146,7 +146,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.XARA.QRtest
+    Android: com.xara.myhost
     iPhone: com.TerenceTat.ARGPS
   buildNumber:
     Standalone: 0
