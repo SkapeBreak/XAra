@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/ARView.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Mapbox/Examples/0_PrefabScenes/Location-basedGame.unity
-    guid: 42f6aa7ce7a604f16ade319663f46ceb
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/MapPage.unity
-    guid: bddb1fa454edca0459327c6092393940
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/easy_qr_code/demo.unity
     guid: 8150b5f8b1996554ebccf8da1d4e9fef
+  - enabled: 1
+    path: Assets/InAppBrowser/Example/ExampleScene.unity
+    guid: 943f4dd7f2cb44e1482baab5930c21b9
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1c0380c51cdae0d4da2e97bfbaeae37f, type: 2}
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 07831acbe06594f5b81e3f3e59c73ebe, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 383ffc59f680c854bb01aa913afaa84c, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d6fc130ece2d7874c9e2205aac02ef65, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 79c9c49a06c995e4cbad9fcf3ec9378d, type: 2}

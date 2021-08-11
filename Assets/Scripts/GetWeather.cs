@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System;
 
 public class GetWeather : MonoBehaviour
 {   
@@ -32,7 +33,7 @@ public class GetWeather : MonoBehaviour
             {
                 System.Threading.Thread.Sleep(5000);
                 var weather = JsonConvert.DeserializeObject<weatherResponse>(webRequest.downloadHandler.text);
-                outputArea.text = weather.main.temp.ToString() + "°C";
+                outputArea.text = Math.Round(weather.main.temp).ToString() + "°C";
             }
         }
     }        
