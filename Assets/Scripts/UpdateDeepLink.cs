@@ -18,8 +18,8 @@ public class UpdateDeepLink : MonoBehaviour
     {
         //Get Deep link value from global deeplink manager
         var label = GetComponent<Text>();
-        // string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
-        string deeplinkID = "Unitydl://mylink?washingmachine";
+        string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
+        // string deeplinkID = "Unitydl://mylink?washingmachine";
         
         string manualName = deeplinkID.Split("?"[0])[1];
         StartCoroutine(GetManualData(manualName));
@@ -46,9 +46,15 @@ public class UpdateDeepLink : MonoBehaviour
 
                 for (int i = 0; i < manualParse.Count; i++){
                 
-                // Yay this works!
-                // Debug.Log(manualParse[i][manualName]);
-                ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i][manualName]);
+                // Debug.Log(i);
+                // Debug.Log(manualParse[i][manualName+"name"]);
+                
+                    // Yay this works!
+                    if(manualParse[i][manualName+"name"] != null)
+                    {   
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i][manualName+"name"]);
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualBody(manualParse[i][manualName+"body"]);
+                    }
                 }
             }
         }

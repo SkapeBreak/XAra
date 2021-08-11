@@ -42,13 +42,7 @@ public class ProcessDeepLinkMngr : MonoBehaviour
         bool validScene;
         switch (sceneName)
         {
-            case "laundrymachine":
-                validScene = true;
-                break;
-            case "1":
-                validScene = true;
-                break;
-            case "2":
+            case "dryer":
                 validScene = true;
                 break;
             case "washingmachine":
