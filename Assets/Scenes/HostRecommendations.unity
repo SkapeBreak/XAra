@@ -4547,9 +4547,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1242871418}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: ChangeToARView
+        m_MethodName: ChangeToDemo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
