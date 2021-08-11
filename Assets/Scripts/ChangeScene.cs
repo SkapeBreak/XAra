@@ -21,4 +21,8 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("Demo");
     }
+    public void ChangeToEAR()
+    {
+        SceneManager.LoadScene("eAR");
+    }
 }

@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.easyar.sense": {
-      "version": "file:C:/Users/andyb/GDrive/Education/Udemy/ARWithUnity/Keys/EasyAR/EasyARSenseUnityPlugin_4.3.0-1931.fb511f99/com.easyar.sense-4.3.0-1931.fb511f99.tgz",
+      "version": "file:C:/Users/diego/Documents/com.easyar.sense-4.3.0-1931.fb511f99.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {

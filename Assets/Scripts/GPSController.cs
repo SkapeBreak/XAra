@@ -12,9 +12,10 @@ public class GPSController : MonoBehaviour
     float startingLat; // default value
     float startingLong;
     private bool toggleText = true;
-    public GameObject cube;
-    public GameObject sphere;
-    public GameObject cylinder;
+    public GameObject root1;
+    //Mesh_Mesh_head_geo.001_lambert2SG.001
+    //public GameObject sphere;
+    //public GameObject cylinder;
     // public Text Textfield;
     DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
     
@@ -123,23 +124,25 @@ public class GPSController : MonoBehaviour
         "\nUpdate Time: " + lastUpdate.ToString("HH:mm:ss") +
         "\nNow: " + rightNow.ToString("HH:mm:ss");
 
-        if ((thisLat < 50.98348 && thisLat > 50.98346) && (thisLong > -114.0730 && thisLong < -114.0728)) 
+        // 51.09777485086772, -114.0553891206199
+
+        if ((thisLat < 51.09774 && thisLat > 51.09780) && (thisLong > -114.0550 && thisLong < -114.0556)) 
         {
-            cube.SetActive(true);
+            root1.SetActive(true);
         }
-        else if ((thisLat < 50.98343 && thisLat > 50.98341) && (thisLong > -114.074 && thisLong < -114.072))
-        {
-            sphere.SetActive(true);
-        }
-        else if ((thisLat < 50.98344 && thisLat > 50.98342) && (thisLong > -114.074 && thisLong < -114.072))
-        {
-            cylinder.SetActive(true);
-        } 
+        // else if ((thisLat < 50.98343 && thisLat > 50.98341) && (thisLong > -114.074 && thisLong < -114.072))
+        // {
+        //     sphere.SetActive(true);
+        // }
+        // else if ((thisLat < 50.98344 && thisLat > 50.98342) && (thisLong > -114.074 && thisLong < -114.072))
+        // {
+        //     cylinder.SetActive(true);
+        // } 
         else
         {
-            cube.SetActive(false);
-            cylinder.SetActive(false);
-            sphere.SetActive(false);
+            root1.SetActive(false);
+            // cylinder.SetActive(false);
+            // sphere.SetActive(false);
         }
     }
 
