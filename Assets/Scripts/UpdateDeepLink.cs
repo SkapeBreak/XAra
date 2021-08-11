@@ -18,7 +18,8 @@ public class UpdateDeepLink : MonoBehaviour
     {
         //Get Deep link value from global deeplink manager
         var label = GetComponent<Text>();
-        string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
+        // string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
+        string deeplinkID = "Unitydl://mylink?washingmachine";
         
         string manualName = deeplinkID.Split("?"[0])[1];
         StartCoroutine(GetManualData(manualName));
@@ -26,8 +27,8 @@ public class UpdateDeepLink : MonoBehaviour
 
     IEnumerator GetManualData(string manualName)
     {
-        Debug.Log(manualName);
-        string uri = $"https://jsonplaceholder.typicode.com/posts/{manualName}";
+        // Debug.Log(manualName);
+        string uri = $"http://50.66.79.240:4000/manuals";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -43,15 +44,12 @@ public class UpdateDeepLink : MonoBehaviour
 
                 // Debug.Log(manualParse);
 
+                for (int i = 0; i < manualParse.Count; i++){
+                
                 // Yay this works!
-                ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse.ToString());
-
-                // for( int i = 0; i < 1; i++)
-                // {
-                //     GameObject manualCard = Instantiate(ManualCardTemplate) as GameObject;
-
-                //     manualCard.GetComponent<ManualButton>().SetManualName(manualParse);
-                // } 
+                // Debug.Log(manualParse[i][manualName]);
+                ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i][manualName]);
+                }
             }
         }
     } 
