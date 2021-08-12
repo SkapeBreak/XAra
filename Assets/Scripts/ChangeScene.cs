@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {   
-    public void ChangeToHome()
-    {
-        SceneManager.LoadScene("LandingPage");
-    }
     public void ChangeToHostRecommendations()
     {
         SceneManager.LoadScene("HostRecommendations");
@@ -17,16 +13,20 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("GuestBook");
     }
-    public void ChangeToARView()
-    {
-        SceneManager.LoadScene("ARView");
-    }
-    public void ChangeToDemo()
-    {
-        SceneManager.LoadScene("Demo");
-    }
+    // public void ChangeToARView()
+    // {
+    //     SceneManager.LoadScene("ARView");
+    // }
+    // public void ChangeToDemo()
+    // {
+    //     SceneManager.LoadScene("Demo");
+    // }
     public void ChangeToEAR()
     {
         SceneManager.LoadScene("eAR");
+    }
+       public void ChangeToHome()
+    {
+        SceneManager.LoadScene("HomePage");
     }
 }

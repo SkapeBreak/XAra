@@ -12,7 +12,6 @@ public class OpenLink : MonoBehaviour
     public void OpenLinkOnClick() 
     {
         selectedGameObject = EventSystem.current.currentSelectedGameObject;
-        Debug.Log(selectedGameObject.name);
 
         if (selectedGameObject.name == "RestaurantAddress" || selectedGameObject.name == "AddressText") 
         {
