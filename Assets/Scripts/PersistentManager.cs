@@ -6,7 +6,7 @@ public class PersistentManager : MonoBehaviour
 {
     public static PersistentManager Instance { get ; private set; }
 
-    public string currentSuite = "Suite888";
+    public string currentSuite;// = "suite888";
 
     private void Awake()
     {

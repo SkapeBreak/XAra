@@ -13,15 +13,11 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("GuestBook");
     }
-    // public void ChangeToARView()
-    // {
-    //     SceneManager.LoadScene("ARView");
-    // }
-    public void ChangeToDemo()
+    public void ChangeToQRCode()
     {
         SceneManager.LoadScene("Demo");
     }
-    public void ChangeToEAR()
+    public void ChangeToAR()
     {
         SceneManager.LoadScene("eAR");
     }

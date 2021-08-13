@@ -72,20 +72,23 @@ public class GetAmenityList : MonoBehaviour
 
                 for (int i = 0; i < amenitiesParse.Count; i++) 
                 {
-                    GameObject amenityCard = Instantiate(amenityCardTemplate) as GameObject;
+                    if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuite)
+                    {
+                        GameObject amenityCard = Instantiate(amenityCardTemplate) as GameObject;
 
-                    amenityCard.SetActive(true);
+                        amenityCard.SetActive(true);
 
-                    amenityCard.GetComponent<Button>().onClick.AddListener(OpenPopUp);
-                    
-                    amenityCard.name = i.ToString();
- 
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityName(amenitiesParse[i]["name"]);
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityHours(amenitiesParse[i]["hours"]);
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityRating(amenitiesParse[i]["rating"]);
-                    amenityCard.GetComponent<AmenityButton>().SetAmenityIcon(endpoint.name + "/" + i.ToString());
+                        amenityCard.GetComponent<Button>().onClick.AddListener(OpenPopUp);
+                        
+                        amenityCard.name = i.ToString();
+    
+                        amenityCard.GetComponent<AmenityButton>().SetAmenityName(amenitiesParse[i]["name"]);
+                        amenityCard.GetComponent<AmenityButton>().SetAmenityHours(amenitiesParse[i]["hours"]);
+                        amenityCard.GetComponent<AmenityButton>().SetAmenityRating(amenitiesParse[i]["rating"]);
+                        amenityCard.GetComponent<AmenityButton>().SetAmenityIcon(endpoint.name + "/" + i.ToString());
 
-                    amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
+                        amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
+                    }
                 }
                 
                 GameObject.Find("HostRecommendationCanvas").SetActive(false);
