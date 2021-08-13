@@ -25,8 +25,12 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("eAR");
     }
-       public void ChangeToHome()
+    public void ChangeToHome()
     {
         SceneManager.LoadScene("HomePage");
+    }
+    public void ChangeToStickNotes()
+    {
+        SceneManager.LoadScene("StickyNotes");
     }
 }
