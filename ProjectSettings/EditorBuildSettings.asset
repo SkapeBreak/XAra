@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ARView.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/easy_qr_code/Demo.unity
+    guid: 8150b5f8b1996554ebccf8da1d4e9fef
+  - enabled: 0
+    path: Assets/InAppBrowser/Example/ExampleScene.unity
+    guid: 943f4dd7f2cb44e1482baab5930c21b9
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 383ffc59f680c854bb01aa913afaa84c, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d6fc130ece2d7874c9e2205aac02ef65, type: 2}

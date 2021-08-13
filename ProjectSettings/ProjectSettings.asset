@@ -854,7 +854,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Analytics: 0
+    Analytics: 1
     Build: 0
     Collab: 0
     Game Performance: 0
@@ -875,11 +875,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 5e8a826c-25e3-48bc-b151-f2be4dc36417
+  cloudProjectId: 59d1e732-3255-46e7-aa62-334d1052f7d0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: myhost (1)
-  organizationId: unity_b95d9ab622e9fa8b112f
+  organizationId: oriskatebreakginal
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0

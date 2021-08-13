@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.easyar.sense": {
-      "version": "file:/Users/terencetat/Documents/Code/XAra Project/XAra/Assets/EasyARSenseUnityPlugin_4.3.0-1931.fb511f99/com.easyar.sense-4.3.0-1931.fb511f99.tgz",
+      "version": "file:C:/Users/diego/Downloads/com.easyar.sense-4.3.0-1931.fb511f99.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {

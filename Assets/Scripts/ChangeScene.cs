@@ -17,10 +17,10 @@ public class ChangeScene : MonoBehaviour
     // {
     //     SceneManager.LoadScene("ARView");
     // }
-    // public void ChangeToDemo()
-    // {
-    //     SceneManager.LoadScene("Demo");
-    // }
+    public void ChangeToDemo()
+    {
+        SceneManager.LoadScene("Demo");
+    }
     public void ChangeToEAR()
     {
         SceneManager.LoadScene("eAR");
@@ -28,5 +28,9 @@ public class ChangeScene : MonoBehaviour
        public void ChangeToHome()
     {
         SceneManager.LoadScene("HomePage");
+    }
+    public void ChangeToSignInPage()
+    {
+        SceneManager.LoadScene("SignInPage");
     }
 }

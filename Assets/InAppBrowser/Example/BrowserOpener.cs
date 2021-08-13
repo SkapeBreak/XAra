@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BrowserOpener : MonoBehaviour {
 
-	public string pageToOpen = "https://www.google.com";
+	public string pageToOpen = "http://50.66.79.240";
 
 	// check readme file to find out how to change title, colors etc.
 	public void OnButtonClicked() {
