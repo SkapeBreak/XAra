@@ -18,8 +18,8 @@ public class UpdateDeepLink : MonoBehaviour
     {
         //Get Deep link value from global deeplink manager
         var label = GetComponent<Text>();
-        // string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
-        string deeplinkID = "Unitydl://mylink?dryer";
+        string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
+        // string deeplinkID = "Unitydl://mylink?washingmachine";
         
         try
         {
@@ -28,7 +28,9 @@ public class UpdateDeepLink : MonoBehaviour
         }
         catch (Exception ex)
         {
-            Debug.Log(ex.Message+" string missing '?' pls fix");
+            Debug.Log(ex.Message+" Unity Deep Link string missing '?' pls fix");
+            ManualCardTemplate.GetComponent<ManualButton>().SetManualName("Cannot GET name");
+            ManualCardTemplate.GetComponent<ManualButton>().SetManualBody("Cannot GET body");
         }
         
     }
@@ -62,6 +64,11 @@ public class UpdateDeepLink : MonoBehaviour
                     {   
                         ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i][manualName+"name"]);
                         ManualCardTemplate.GetComponent<ManualButton>().SetManualBody(manualParse[i][manualName+"body"]);
+                    }
+                    else 
+                    {
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualName("Cannot GET name");
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualBody("Cannot GET body");
                     }
                 }
             }
