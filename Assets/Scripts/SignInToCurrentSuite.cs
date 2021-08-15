@@ -1,28 +1,22 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
-
-// public class SignInToCurrentSuite : MonoBehaviour
-// {
-//     public Text currentSuiteText;
-
-//     public void SignInOnClick() 
-//     {
-//         currentSuiteText.text = PersistentManager.Instance.currentSuite;
-//     }
-// }
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using SimpleJSON;
+using System;
+using UnityEngine.EventSystems;
+using UnityEngine.Networking;
 
 public class SignInToCurrentSuite : MonoBehaviour
 {
     public static SignInToCurrentSuite Instance { get; private set; }
     public string deeplinkURL;
+    bool validSuiteId;
+    string suiteId;
+
+    public GameObject warningPopUp;
+    JSONNode suitesParse;
 
     private void Awake()
     {
@@ -30,14 +24,15 @@ public class SignInToCurrentSuite : MonoBehaviour
         {
             Instance = this;                
             Application.deepLinkActivated += onDeepLinkActivated;
-            if (!string.IsNullOrEmpty(Application.absoluteURL))
+
+            if (!string.IsNullOrEmpty("unitydl://mylink?suite888"))//"unitydl://mylink?88
             {
-                // Cold start and Application.absoluteURL not null so process Deep Link.
-                onDeepLinkActivated(Application.absoluteURL);
+                onDeepLinkActivated("unitydl://mylink?suite888");//Application.absoluteURL
             }
-            // Initialize DeepLink Manager global variable.
             else deeplinkURL = "[none]";
+
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(warningPopUp);
         }
         else
         {
@@ -45,34 +40,60 @@ public class SignInToCurrentSuite : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartCoroutine(authSuite());
+    }
+
     private void onDeepLinkActivated(string url)
     {
-        // Update DeepLink Manager global variable, so URL can be accessed from anywhere.
         deeplinkURL = url;
-        
-        // Decode the URL to determine action. 
-        // In this example, the app expects a link formatted like this:
-        // unitydl://mylink?scene1
+        suiteId = deeplinkURL.Split("?"[0])[1];
+        Debug.Log(suiteId);
 
-        string suiteId = url.Split("?"[0])[1];
-        bool validSuiteId;
-        switch (suiteId)
+        SceneManager.LoadScene("HomePage");
+    }
+
+    IEnumerator authSuite()
+    {
+        string uri = "http://localhost:4000/suites";
+
+        using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
-            case "suite888":
-                PersistentManager.Instance.currentSuite = suiteId;
-                validSuiteId = true;
-                break;
-            case "suite889":
-                PersistentManager.Instance.currentSuite = suiteId;
-                validSuiteId = true;
-                break;
-            default:
-                validSuiteId = false;
-                break;
-        }
-        if (validSuiteId) 
-        {
-            SceneManager.LoadScene("HomePage");
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.isNetworkError || webRequest.isHttpError)
+            {
+                Debug.Log(webRequest.error);
+            }
+            else
+            {
+                suitesParse = JSON.Parse(webRequest.downloadHandler.text);
+                Debug.Log(suiteId);
+
+                for (int i = 0; i < suitesParse.Count; i++) 
+                {
+                    if (suitesParse[i]["suiteId"] == suiteId)
+                    {
+                        Debug.Log("Auth Succeeded");
+
+                        validSuiteId = true;
+                        break;
+                    }
+                    else
+                    {
+                        Debug.Log("Suite Not Found");
+
+                        PersistentManager.Instance.currentSuiteId = "NotFound";
+                        warningPopUp.SetActive(true);
+                        validSuiteId = false;
+                    }
+                }
+                 if (validSuiteId) 
+                {
+                    PersistentManager.Instance.currentSuiteId = suiteId;
+                }
+            }
         }
     }
 }

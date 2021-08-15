@@ -72,7 +72,7 @@ public class GetAmenityList : MonoBehaviour
 
                 for (int i = 0; i < amenitiesParse.Count; i++) 
                 {
-                    if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuite)
+                    if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
                     {
                         GameObject amenityCard = Instantiate(amenityCardTemplate) as GameObject;
 

@@ -7,26 +7,51 @@ public class ChangeScene : MonoBehaviour
 {   
     public void ChangeToHostRecommendations()
     {
-        SceneManager.LoadScene("HostRecommendations");
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != "NotFound")
+        {
+            Debug.Log(suiteId);
+            SceneManager.LoadScene("HostRecommendations");
+        }
     }
     public void ChangeToGuestBook()
     {
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != "NotFound")
+        {
         SceneManager.LoadScene("GuestBook");
+        }
     }
     public void ChangeToQRCode()
     {
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != "NotFound")
+        {
         SceneManager.LoadScene("Demo");
+        }
     }
     public void ChangeToAR()
     {
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != "NotFound")
+        {
         SceneManager.LoadScene("eAR");
+        }
     }
-       public void ChangeToHome()
+    public void ChangeToHome()
     {
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != "NotFound")
+        {
         SceneManager.LoadScene("HomePage");
+        }
     }
     public void ChangeToSignInPage()
     {
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != null)
+        {
         SceneManager.LoadScene("SignInPage");
+        }
     }
 }
