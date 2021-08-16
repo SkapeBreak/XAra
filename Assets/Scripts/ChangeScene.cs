@@ -21,9 +21,9 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("eAR");
     }
-       public void ChangeToHome()
+       public void ChangeToLandingPage()
     {
-        SceneManager.LoadScene("HomePage");
+        SceneManager.LoadScene("LandingPage");
     }
     public void ChangeToSignInPage()
     {
