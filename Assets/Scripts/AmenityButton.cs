@@ -11,7 +11,7 @@ public class AmenityButton : MonoBehaviour
     [SerializeField] private Text amenityName;
     [SerializeField] private Text amenityHours;
     [SerializeField] private Text amenityRating;
-    [SerializeField] private RawImage amenityIcon;
+    [SerializeField] private Image amenityIcon;
 
     public void SetAmenityName(string textString) 
     {
@@ -30,6 +30,6 @@ public class AmenityButton : MonoBehaviour
 
     public void SetAmenityIcon(string textString) 
     {
-        amenityIcon.texture = Resources.Load<Texture2D>("AmenityIcons/" + textString);
+        amenityIcon.sprite = Resources.Load<Sprite>("AmenityIcons/" + textString);
     }
 }
