@@ -25,9 +25,9 @@ public class SignInToCurrentSuite : MonoBehaviour
             Instance = this;                
             Application.deepLinkActivated += onDeepLinkActivated;
 
-            if (!string.IsNullOrEmpty(Application.absoluteURL))//"unitydl://mylink?88
+            if (!string.IsNullOrEmpty("unitydl://mylink?suite888"))//"unitydl://mylink?suite888"
             {
-                onDeepLinkActivated(Application.absoluteURL);//Application.absoluteURL
+                onDeepLinkActivated("unitydl://mylink?suite888");//Application.absoluteURL
             }
             else deeplinkURL = "[none]";
 
@@ -56,7 +56,7 @@ public class SignInToCurrentSuite : MonoBehaviour
 
     IEnumerator authSuite()
     {
-        string uri = "http://localhost:4000/suites";
+        string uri = "http://localhost:5000/suites";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {

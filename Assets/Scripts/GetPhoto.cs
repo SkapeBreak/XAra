@@ -11,7 +11,7 @@ public class GetPhoto : MonoBehaviour
 {
     [SerializeField] private GameObject photoCardTemplate;
 
-    JSONNode appliancesParse;
+    JSONNode photoParse;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class GetPhoto : MonoBehaviour
 
     IEnumerator GetPhotoData()
     {
-        string uri = "http://50.66.79.240:4000/appliances";
+        string uri = "http://localhost:5000/guest-book";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -32,31 +32,34 @@ public class GetPhoto : MonoBehaviour
             }
             else
             {
-                appliancesParse = JSON.Parse(webRequest.downloadHandler.text);
+                photoParse = JSON.Parse(webRequest.downloadHandler.text);
 
-                 for (int i = 0; i < appliancesParse["response"].Count; i++) 
+                 for (int i = 0; i < photoParse["response"].Count; i++) 
                  {
-                    string uriPhotos = "http://50.66.79.240:4000/" + appliancesParse["response"][i]["avatar"];
-
-                    using(UnityWebRequest photoRequest = UnityWebRequestTexture.GetTexture(uriPhotos))
+                     if (photoParse["response"][i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
                     {
-                        yield return photoRequest.SendWebRequest();
+                        string uriPhotos = "http://localhost:5000/" + photoParse["response"][i]["avatar"];
 
-                        if (photoRequest.isNetworkError || photoRequest.isHttpError)
+                        using(UnityWebRequest photoRequest = UnityWebRequestTexture.GetTexture(uriPhotos))
                         {
-                            Debug.Log(photoRequest.error);
-                        }
-                        else
-                        {
-                            var photoTexture = DownloadHandlerTexture.GetContent(photoRequest);
+                            yield return photoRequest.SendWebRequest();
 
-                            GameObject photoCard = Instantiate(photoCardTemplate) as GameObject;
+                            if (photoRequest.isNetworkError || photoRequest.isHttpError)
+                            {
+                                Debug.Log(photoRequest.error);
+                            }
+                            else
+                            {
+                                var photoTexture = DownloadHandlerTexture.GetContent(photoRequest);
 
-                            photoCard.SetActive(true);
+                                GameObject photoCard = Instantiate(photoCardTemplate) as GameObject;
 
-                            photoCard.GetComponent<RawImage>().texture = photoTexture;
+                                photoCard.SetActive(true);
 
-                            photoCard.transform.SetParent(photoCardTemplate.transform.parent, false);
+                                photoCard.GetComponent<RawImage>().texture = photoTexture;
+
+                                photoCard.transform.SetParent(photoCardTemplate.transform.parent, false);
+                            }
                         }
                     }
                  }
