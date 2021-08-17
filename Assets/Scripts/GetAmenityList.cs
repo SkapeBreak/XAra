@@ -72,8 +72,8 @@ public class GetAmenityList : MonoBehaviour
 
                 for (int i = 0; i < amenitiesParse.Count; i++) 
                 {
-                    if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
-                    {
+                    // if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
+                    // {
                         GameObject amenityCard = Instantiate(amenityCardTemplate) as GameObject;
 
                         amenityCard.SetActive(true);
@@ -88,10 +88,10 @@ public class GetAmenityList : MonoBehaviour
                         amenityCard.GetComponent<AmenityButton>().SetAmenityIcon(endpoint.name + "/" + i.ToString());
 
                         amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
-                    }
+                    // }
                 }
                 
-                GameObject.Find("HostRecommendationCanvas").SetActive(false);
+                // GameObject.Find("HostRecommendationCanvas").SetActive(false);
             }
         }
     } 
