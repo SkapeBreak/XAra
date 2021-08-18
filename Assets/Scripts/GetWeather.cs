@@ -5,42 +5,36 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using SimpleJSON;
 using System;
 
 public class GetWeather : MonoBehaviour
 {   
-   InputField outputArea;
+   public Text weatherTemp;
+   public Text weatherCondition;
 
     void Start()
     {
-        StartCoroutine(GetWeatherData());
+        StartCoroutine(GetWeatherConditionData());
     }
   
-    IEnumerator GetWeatherData()
+    IEnumerator GetWeatherConditionData()
     {
         string uri = "https://api.openweathermap.org/data/2.5/weather?lat=51.056442&lon=-114.069333&units=metric&APPID=c24bbbe6090072b0f620ea57d0ce8764";
-        outputArea = GameObject.Find("Weather").GetComponent<InputField>();
 
-        
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
-            
             yield return webRequest.SendWebRequest();
             if (webRequest.isNetworkError|| webRequest.isHttpError)
             {
                 Debug.Log(webRequest.error);
             } else
             {
-                System.Threading.Thread.Sleep(5000);
-                var weather = JsonConvert.DeserializeObject<weatherResponse>(webRequest.downloadHandler.text);
-                outputArea.text = Math.Round(weather.main.temp).ToString() + "°C";
+                JSONNode climate = JSON.Parse(webRequest.downloadHandler.text);
+
+                weatherCondition.text = climate["weather"][0]["description"] + "  |";
+                weatherTemp.text = (climate["main"]["temp"]).ToString().Split("."[0])[0] + "°C";
             }
         }
     }        
 }
-
-
-
-
-
-
