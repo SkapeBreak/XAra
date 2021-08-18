@@ -78,7 +78,7 @@ namespace epoching.easy_qr_code
             }
             else if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
-                this.raw_image_video.rectTransform.sizeDelta = new Vector2(1080, 1080 * this.cam_texture.width / (float)this.cam_texture.height);
+                this.raw_image_video.rectTransform.sizeDelta = new Vector2(1500, 1500 * this.cam_texture.width / (float)this.cam_texture.height);
                 this.raw_image_video.rectTransform.localScale = new Vector3(-1, 1, 1);
                 this.raw_image_video.rectTransform.rotation = Quaternion.Euler(0, 0, 90);
             }
