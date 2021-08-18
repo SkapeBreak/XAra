@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HomePage.unity
+    path: Assets/Scenes/HomePage1.unity
     guid: b524a04115367432f92e6d7af20bf14c
+  - enabled: 1
+    path: Assets/POLYGON city pack/scene/HomePage.unity
+    guid: 7759de288f5d4ee449a0ca5e2244944a
   - enabled: 1
     path: Assets/Scenes/HostRecommendations.unity
     guid: 05e9fe39e4cacaf4c956e5c1d3986a2d
@@ -18,8 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/eAR.unity
     guid: 49ac844205ad2334fb6b93e2b54b0354
   - enabled: 1
-    path: Assets/easy_qr_code/demo.unity
+    path: Assets/easy_qr_code/QRCodePage.unity
     guid: 8150b5f8b1996554ebccf8da1d4e9fef
+  - enabled: 1
+    path: Assets/Placenote/Examples/3_StickyNotes/StickyNotesPage.unity
+    guid: 41383623771544cb5bbf6df7ae95e49b
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 383ffc59f680c854bb01aa913afaa84c, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d6fc130ece2d7874c9e2205aac02ef65, type: 2}
