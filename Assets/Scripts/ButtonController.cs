@@ -3,8 +3,13 @@ using UnityEngine.UI;
 
 public enum ButtonType
 {
-    START_GAME,
-    KILL_PLAYER
+    ONE,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
 }
 
 [RequireComponent(typeof(Button))]
@@ -14,6 +19,15 @@ public class ButtonController : MonoBehaviour
 
     CanvasManager canvasManager;
     Button menuButton;
+    // Button RecommendationsButton;
+    // Button ManualsButton;
+    // Button GuestBoookButton;
+    // Button RestaurantsButton;
+    // Button MuseumsBackButton;
+    // Button ParksButton;
+    // Button AmenitiesButton;
+    // Button SubmitButton;
+    // Button CancelButton;
     
     private void Start()
     {
@@ -26,13 +40,33 @@ public class ButtonController : MonoBehaviour
     {
         switch (buttonType)
         {
-            case ButtonType.START_GAME:
+            case ButtonType.ONE:
                 //Call other code that is necessary to start the game like levelManager.StartGame()
-                canvasManager.SwitchCanvas(CanvasType.GameUI);
+                canvasManager.SwitchCanvas(CanvasType.Recommendations);
                 break;
-            case ButtonType.KILL_PLAYER:
+            case ButtonType.TWO:
                 //Do More Things like SaveSystem.Save()
-                canvasManager.SwitchCanvas(CanvasType.EndScreen);
+                canvasManager.SwitchCanvas(CanvasType.Restaurants);
+                break;
+            case ButtonType.THREE:
+                //Do More Things like SaveSystem.Save()
+                canvasManager.SwitchCanvas(CanvasType.Museums);
+                break;
+            case ButtonType.FOUR:
+                //Do More Things like SaveSystem.Save()
+                canvasManager.SwitchCanvas(CanvasType.Parks);
+                break;
+            case ButtonType.FIVE:
+                //Do More Things like SaveSystem.Save()
+                canvasManager.SwitchCanvas(CanvasType.Amenities);
+                break;
+            case ButtonType.SIX:
+                //Do More Things like SaveSystem.Save()
+                canvasManager.SwitchCanvas(CanvasType.Manuals);
+                break;
+            case ButtonType.SEVEN:
+                //Do More Things like SaveSystem.Save()
+                canvasManager.SwitchCanvas(CanvasType.GuestBook);
                 break;
             default:
                 break;

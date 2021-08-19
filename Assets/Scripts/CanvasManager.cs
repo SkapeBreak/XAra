@@ -6,12 +6,13 @@ using UnityEngine;
 public enum CanvasType
 {
     MainMenu,
-    GameUI,
-    EndScreen,
+    Recommendations,
     Restaurants,
     Museums,
     Parks,
-    Amenities
+    Amenities,
+    Manuals,
+    GuestBook
 }
 
 public class CanvasManager : Singleton<CanvasManager>
