@@ -875,19 +875,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-<<<<<<< HEAD
-  cloudProjectId: 6c73965c-d38e-4abe-a164-be94963e71f9
-  framebufferDepthMemorylessMode: 0
-  qualitySettingsNames: []
-  projectName: myhost (4)
-  organizationId: oriskatebreakginal
-=======
   cloudProjectId: 9032c90c-e466-465a-9603-6566a9b74347
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: myhost (3)
   organizationId: unity_b95d9ab622e9fa8b112f
->>>>>>> fd2beeb092d9adc125eb2eede2a8e693fe5fb66b
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
