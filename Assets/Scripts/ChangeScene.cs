@@ -27,7 +27,7 @@ public class ChangeScene : MonoBehaviour
         string suiteId = PersistentManager.Instance.currentSuiteId;
         if (suiteId != "NotFound")
         {
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("QRCodePage");
         }
     }
     public void ChangeToAR()
@@ -52,6 +52,15 @@ public class ChangeScene : MonoBehaviour
         if (suiteId != null)
         {
         SceneManager.LoadScene("SignInPage");
+        }
+    }
+
+        public void ChangeToStickynotes()
+    {
+        string suiteId = PersistentManager.Instance.currentSuiteId;
+        if (suiteId != null)
+        {
+        SceneManager.LoadScene("StickyNotesPage");
         }
     }
 }
