@@ -63,13 +63,4 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("StickyNotesPage");
         }
     }
-
-    public void ChangeToSignGuestbook()
-    {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != null)
-        {
-        SceneManager.LoadScene("PostPhoto");
-        }
-    }
 }
