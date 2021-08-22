@@ -167,8 +167,8 @@ public class UnityARBuildPostprocessor
 
 		UnityEditor.iOS.Xcode.PBXProject proj = new UnityEditor.iOS.Xcode.PBXProject();
 		proj.ReadFromString(File.ReadAllText(projPath));
-		proj.AddFrameworkToProject(proj.TargetGuidByName("Unity-iPhone"), "ARKit.framework", false);
-		string target = proj.TargetGuidByName("Unity-iPhone");
+		proj.AddFrameworkToProject(proj.GetUnityFrameworkTargetGuid(), "ARKit.framework", false);
+		string target = proj.GetUnityFrameworkTargetGuid();
 		Directory.CreateDirectory(Path.Combine(pathToBuiltProject, "Libraries/Unity"));
 
 		// Check UnityARKitPluginSettings

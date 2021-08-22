@@ -444,6 +444,10 @@ public class LibPlacenote1 : MonoBehaviour
 
 	public void Start()
 	{
+		Shutdown();
+		Debug.Log("Placenote1 intialization state: " + mInitialized);
+		Init();
+		Debug.Log("Placenote1 intialization state: " + mInitialized);
         mSession = UnityARSessionNativeInterface.GetARSessionNativeInterface();
         UnityARSessionNativeInterface.ARFrameUpdatedEvent += ARFrameUpdated;
 	}
@@ -549,7 +553,7 @@ public class LibPlacenote1 : MonoBehaviour
 	/// <summary>
 	/// Initializes the LibPlacenote SDK singleton class.
 	/// </summary>
-	private void Init ()
+	public void Init ()
 	{
 		#if UNITY_EDITOR
 		mInitialized = true;
@@ -572,7 +576,7 @@ public class LibPlacenote1 : MonoBehaviour
 	/// <summary>
 	/// Shutdown the Placenote SDK, especially all mapping threads
 	/// </summary>
-	private void Shutdown ()
+	public void Shutdown ()
 	{
 		#if UNITY_EDITOR
 		mInitialized = false;
