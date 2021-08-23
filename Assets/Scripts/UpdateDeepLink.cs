@@ -13,30 +13,39 @@ public class UpdateDeepLink : MonoBehaviour
     JSONNode manualParse;
     [SerializeField] private GameObject ManualCardTemplate;
 
-
     private void Start()
     {
         //Get Deep link value from global deeplink manager
         var label = GetComponent<Text>();
-        // string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
-        string deeplinkID = "Unitydl://mylink?dryer";
-        
-        try
+        string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
+        // string deeplinkID = "Unitydl://mylink?washingmachine";
+
+        // Debug.Log(deeplinkID);
+
+        if(deeplinkID != "[none]")
         {
-            string manualName = deeplinkID.Split("?"[0])[1];
-            StartCoroutine(GetManualData(manualName));
-        }
-        catch (Exception ex)
+            try
+            {
+                string manualName = deeplinkID.Split("?"[0])[1];
+                StartCoroutine(GetManualData(manualName));
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message+" ~ Need ? in deeplinkID to split.");
+            }  
+        } 
+        else 
         {
-            Debug.Log(ex.Message+" string missing '?' pls fix");
+            // Debug.Log(GetManualList.manualID);
+            string manualNameFromManualPage = GetManualList.manualID;
+            StartCoroutine(GetManualData(manualNameFromManualPage));
         }
-        
     }
 
     IEnumerator GetManualData(string manualName)
     {
         // Debug.Log(manualName);
-        string uri = $"http://50.66.79.240:4000/manuals";
+        string uri = $"http://localhost:5000/manuals";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -54,15 +63,17 @@ public class UpdateDeepLink : MonoBehaviour
 
                 for (int i = 0; i < manualParse.Count; i++){
                 
-                // Debug.Log(i);
-                // Debug.Log(manualParse[i][manualName+"name"]);
+                // Debug.Log(i);        
+                // Debug.Log(manualParse[i]["deeplink"]);
+                // Debug.Log(manualName);
+                // Debug.Log(GetManualList.manualID);
+                // Debug.Log("---------------------------------------------------------");
                 
-                    // Yay this works!
-                    if(manualParse[i][manualName+"name"] != null)
+                    if (manualParse[i]["deeplink"] == manualName)
                     {   
-                        ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i][manualName+"name"]);
-                        ManualCardTemplate.GetComponent<ManualButton>().SetManualBody(manualParse[i][manualName+"body"]);
-                    }
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i]["name"]);
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualBody(manualParse[i]["body"]);
+                    } 
                 }
             }
         }

@@ -63,12 +63,22 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("StickyNotesPage");
         }
     }
-            public void ChangeToNav()
+    
+    public void ChangeToNav()
     {
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("NavigationPage");
+        }
+    }
+    
+    public void ChangeToManual()
+    {
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
+        {
+        SceneManager.LoadScene("ManualPage");
         }
     }
 }
