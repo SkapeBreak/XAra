@@ -13,23 +13,37 @@ public class UpdateDeepLink : MonoBehaviour
     JSONNode manualParse;
     [SerializeField] private GameObject ManualCardTemplate;
 
+    // private void Awake()
+    // {
+    //     DontDestroyOnLoad(GetManualList.manualID);
+    // }
 
     private void Start()
     {
         //Get Deep link value from global deeplink manager
         var label = GetComponent<Text>();
         // string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
-        string deeplinkID = "Unitydl://mylink?dryer";
+        string deeplinkID = "Unitydl://mylink?washingmachine";
+
+        if(deeplinkID != null)
+        {
+            try
+            {
+                string manualName = deeplinkID.Split("?"[0])[1];
+                StartCoroutine(GetManualData(manualName));
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message+" string missing '?' pls fix");
+            }  
+        } 
+        else 
+        {
+            // The manualID keeps getting destroyed on SceneLoad
+            // Debug.Log(GetManualList.manualID.name);
+            // StartCoroutine(GetManualData(GetManualList.manualID));
+        }
         
-        try
-        {
-            string manualName = deeplinkID.Split("?"[0])[1];
-            StartCoroutine(GetManualData(manualName));
-        }
-        catch (Exception ex)
-        {
-            Debug.Log(ex.Message+" string missing '?' pls fix");
-        }
         
     }
 
@@ -58,10 +72,10 @@ public class UpdateDeepLink : MonoBehaviour
                 // Debug.Log(manualParse[i][manualName+"name"]);
                 
                     // Yay this works!
-                    if(manualParse[i][manualName+"name"] != null)
+                    if(manualParse[i]["deeplink"] != null)
                     {   
-                        ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i][manualName+"name"]);
-                        ManualCardTemplate.GetComponent<ManualButton>().SetManualBody(manualParse[i][manualName+"body"]);
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualName(manualParse[i]["name"]);
+                        ManualCardTemplate.GetComponent<ManualButton>().SetManualBody(manualParse[i]["body"]);
                     }
                 }
             }

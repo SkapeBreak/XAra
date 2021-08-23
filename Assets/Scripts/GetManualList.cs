@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using SimpleJSON;
 using System;
@@ -14,14 +15,23 @@ public class GetManualList : MonoBehaviour
     // public Text manualLabel;
     // public Image manualIcon;
 
+    public static GameObject manualID;
+
     JSONNode manualParse;
 
     void Start()
     {
-        StartCoroutine(GetManualData());
+        StartCoroutine(GetManualListData());
     }
 
-    IEnumerator GetManualData()
+    public void OnManualClick()
+    {
+        manualID = EventSystem.current.currentSelectedGameObject;
+        Debug.Log(manualID.name);
+        SceneManager.LoadScene("bookcanvaspage");
+    }
+
+    IEnumerator GetManualListData()
     {
         // endpoint = EventSystem.current.currentSelectedGameObject;
 
