@@ -7,49 +7,49 @@ public class ChangeScene : MonoBehaviour
 {   
     public void ChangeToHostRecommendations()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != "NotFound")
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
         {
-            Debug.Log(suiteId);
+            // Debug.Log(suiteId);
             SceneManager.LoadScene("HostRecommendations");
         }
     }
     public void ChangeToGuestBook()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != "NotFound")
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("GuestBook");
         }
     }
     public void ChangeToQRCode()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != "NotFound")
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("QRCodePage");
         }
     }
     public void ChangeToAR()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != "NotFound")
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("eAR");
         }
     }
     public void ChangeToHome()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != "NotFound")
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("HomePage");
         }
     }
     public void ChangeToSignInPage()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != null)
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("SignInPage");
         }
@@ -58,7 +58,7 @@ public class ChangeScene : MonoBehaviour
     public void ChangeToStickynotes()
     {
         // string suiteId = PersistentManager.Instance.currentSuiteId;
-        // if (suiteId != null)
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("StickyNotesPage");
         }
@@ -66,7 +66,7 @@ public class ChangeScene : MonoBehaviour
             public void ChangeToNav()
     {
         // string suiteId = PersistentManager.Instance.currentSuiteId;
-        // if (suiteId != null)
+        // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("NavigationPage");
         }
