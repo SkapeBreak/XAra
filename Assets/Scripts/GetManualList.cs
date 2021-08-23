@@ -15,7 +15,7 @@ public class GetManualList : MonoBehaviour
     // public Text manualLabel;
     // public Image manualIcon;
 
-    public static GameObject manualID;
+    public static string manualID;
 
     JSONNode manualParse;
 
@@ -26,9 +26,10 @@ public class GetManualList : MonoBehaviour
 
     public void OnManualClick()
     {
-        manualID = EventSystem.current.currentSelectedGameObject;
-        Debug.Log(manualID.name);
+        manualID = EventSystem.current.currentSelectedGameObject.name;
+        // Debug.Log(manualID.name);
         SceneManager.LoadScene("bookcanvaspage");
+        DontDestroyOnLoad(gameObject);
     }
 
     IEnumerator GetManualListData()
