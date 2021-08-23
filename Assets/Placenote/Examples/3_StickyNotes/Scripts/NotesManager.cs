@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.SceneManagement;
 
 // Classes to hold Notes information.
 
@@ -272,10 +273,12 @@ namespace StickyNotes
             // add listeners to the buttons
             note.GetComponent<NoteController>().mEditButton.onClick.AddListener(OnEditButtonClick);
             note.GetComponent<NoteController>().mDeleteButton.onClick.AddListener(OnDeleteButtonClick);
+            // note.GetComponent<NoteController>().mManualButton.onClick.AddListener(OnManualButtonClick);
 
 
             note.GetComponent<NoteController>().mEditButton.gameObject.SetActive(false);
             note.GetComponent<NoteController>().mDeleteButton.gameObject.SetActive(false);
+            // note.GetComponent<NoteController>().mManualButton.gameObject.SetActive(false);
             note.GetComponent<NoteController>().mActiveButtons = false;
 
             note.GetComponentInChildren<InputField>().text = info.note;
@@ -296,6 +299,12 @@ namespace StickyNotes
             Debug.Log("Delete button clicked!");
             DeleteCurrentNote();
         }
+
+        // public void OnManualButtonClick()
+        // {
+        //     Debug.Log("Manual button clicked!");
+        //     SceneManager.LoadScene("ManualPage");
+        // }
 
         private void DeleteCurrentNote()
         {

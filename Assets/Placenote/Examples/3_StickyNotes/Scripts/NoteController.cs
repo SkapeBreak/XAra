@@ -14,6 +14,7 @@ namespace StickyNotes
 
         public Button mEditButton;
         public Button mDeleteButton;
+        // public Button mManualButton;
 
     }
 }

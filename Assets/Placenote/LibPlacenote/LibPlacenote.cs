@@ -495,6 +495,10 @@ public class LibPlacenote : MonoBehaviour
 
     void Start()
     {
+		Shutdown();
+		Debug.Log("Placenote0 intialization state: " + mInitialized);
+		Init();
+		Debug.Log("Placenote0 intialization state: " + mInitialized);
         if (cameraManager == null)
         {
             Debug.LogError("LibPlacenote: Start() -> Camera manager not passed as object parameter");
@@ -657,7 +661,7 @@ public class LibPlacenote : MonoBehaviour
     /// <summary>
     /// Initializes the LibPlacenote SDK singleton class.
     /// </summary>
-    private void Init()
+    public void Init()
     {
 #if UNITY_EDITOR
         mInitialized = true;
@@ -680,7 +684,7 @@ public class LibPlacenote : MonoBehaviour
     /// <summary>
     /// Shutdown the Placenote SDK, especially all mapping threads
     /// </summary>
-    private void Shutdown()
+    public void Shutdown()
     {
 #if UNITY_EDITOR
         mInitialized = false;

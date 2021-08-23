@@ -57,10 +57,18 @@ public class ChangeScene : MonoBehaviour
 
     public void ChangeToStickynotes()
     {
-        string suiteId = PersistentManager.Instance.currentSuiteId;
-        if (suiteId != null)
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != null)
         {
         SceneManager.LoadScene("StickyNotesPage");
+        }
+    }
+            public void ChangeToNav()
+    {
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != null)
+        {
+        SceneManager.LoadScene("NavigationPage");
         }
     }
 }

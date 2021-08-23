@@ -13,7 +13,7 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      '': Any
+      : Any
     second:
       enabled: 0
       settings:
@@ -29,7 +29,7 @@ PluginImporter:
         Exclude Win64: 1
         Exclude iOS: 0
   - first:
-      '': Editor
+      : Editor
     second:
       enabled: 0
       settings:
