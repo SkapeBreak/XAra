@@ -20,7 +20,7 @@ public class UpdateDeepLink : MonoBehaviour
         string deeplinkID = ProcessDeepLinkMngr.Instance.deeplinkURL;
         // string deeplinkID = "Unitydl://mylink?washingmachine";
 
-        // Debug.Log(deeplinkID);
+        Debug.Log(deeplinkID);
 
         if(deeplinkID != "[none]")
         {
