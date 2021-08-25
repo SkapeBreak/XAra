@@ -47,6 +47,21 @@ public class ProcessDeepLinkMngr : MonoBehaviour
                 break;
             case "washingmachine":
                 validScene = true;
+                break; 
+            case "soundsystem":
+                validScene = true;
+                break;
+            case "importantinformation":
+                validScene = true;
+                break;
+            case "television":
+                validScene = true;
+                break;
+            case "kitchen":
+                validScene = true;
+                break;
+            case "linens":
+                validScene = true;
                 break;
             default:
                 validScene = false;

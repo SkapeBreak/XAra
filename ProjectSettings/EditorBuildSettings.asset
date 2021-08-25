@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/HostRecommendations.unity
     guid: 05e9fe39e4cacaf4c956e5c1d3986a2d
   - enabled: 1
-    path: Assets/Scenes/QRCodePage.unity
+    path: Assets/Scenes/AdminQRCodePage.unity
     guid: 8150b5f8b1996554ebccf8da1d4e9fef
   - enabled: 1
-    path: Assets/Scenes/StickyNotesPage.unity
+    path: Assets/Scenes/AdminStickyNotesPage.unity
     guid: 41383623771544cb5bbf6df7ae95e49b
   - enabled: 1
-    path: Assets/Scenes/NavigationPage.unity
+    path: Assets/Scenes/AdminNavigationPage.unity
     guid: 75e66f313d4513d46ac5ea03cf0c7c85
   - enabled: 1
     path: Assets/Scenes/eAR.unity
@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/bookcanvaspage.unity
     guid: a2d97ea3e3c454db58edc099a742a38b
+  - enabled: 1
+    path: Assets/Scenes/AdminPanel.unity
+    guid: d682e12405041a348b1c0ad252fca639
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 383ffc59f680c854bb01aa913afaa84c, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d6fc130ece2d7874c9e2205aac02ef65, type: 2}
