@@ -16,6 +16,7 @@ public class AmenityOverview : MonoBehaviour
     InputField website;
     InputField hours;
     InputField rating;
+    InputField comment;
 
     void Update()
     {
@@ -35,6 +36,9 @@ public class AmenityOverview : MonoBehaviour
         hours.text = GetAmenityList.amenityHours;
 
         rating = GameObject.Find("Rating").GetComponent<InputField>();
-        rating.text = GetAmenityList.amenityRating;      
+        rating.text = GetAmenityList.amenityRating;   
+
+        comment = GameObject.Find("HostComment").GetComponent<InputField>();
+        comment.text = GetAmenityList.amenityComment;        
     }
 }

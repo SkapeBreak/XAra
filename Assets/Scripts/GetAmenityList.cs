@@ -25,6 +25,7 @@ public class GetAmenityList : MonoBehaviour
     public static string amenityWebsite;
     public static string amenityHours;
     public static string amenityRating;
+    public static string amenityComment;
 
     private void Start()
     {
@@ -48,6 +49,7 @@ public class GetAmenityList : MonoBehaviour
             amenityWebsite = restaurantsParse[amenityId.name]["website"];
             amenityHours = restaurantsParse[amenityId.name]["hours"];
             amenityRating = restaurantsParse[amenityId.name]["rating"];
+            amenityComment = restaurantsParse[amenityId.name]["comment"];
         }
         else{
             amenityId = EventSystem.current.currentSelectedGameObject;
@@ -58,6 +60,7 @@ public class GetAmenityList : MonoBehaviour
             amenityWebsite = amenitiesParse[amenityId.name]["website"];
             amenityHours = amenitiesParse[amenityId.name]["hours"];
             amenityRating = amenitiesParse[amenityId.name]["rating"];
+            amenityComment = amenitiesParse[amenityId.name]["comment"];
         }
 
         popUpAmenityDescription.SetActive(true);

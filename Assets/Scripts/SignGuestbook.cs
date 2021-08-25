@@ -13,6 +13,7 @@ public class SignGuestbook : MonoBehaviour {
     public GameObject guestbookCanvas;
     public GameObject signGuestbook;
     public GameObject fileBrowser;
+    public GameObject addedPhoto;
 
     public void SignGuestbookOnClick()
     {
@@ -33,12 +34,20 @@ public class SignGuestbook : MonoBehaviour {
        
     public void PostData() 
     {
+        addedPhoto.SetActive(true);
+        
         UserData data = new UserData();
         data.comment = commentInput.text;
         data.suiteId = "suite888"; //PersistentManager.Instance.currentSuiteId;
         data.avatar = SimpleFileBrowser.FileBrowser.Result[0];
 
-        string json = JsonUtility.ToJson(data, true);    
+        Debug.Log("comment " + data.comment);
+        Debug.Log("suiteId " + data.suiteId);
+        Debug.Log("avatar " + data.avatar);
+
+        string json = JsonUtility.ToJson(data, true);  
+
+        Debug.Log("json " + json);  
         
         StartCoroutine(PostDataCoroutine("http://www.localhost:5000/guest-book/store", json));
     }
