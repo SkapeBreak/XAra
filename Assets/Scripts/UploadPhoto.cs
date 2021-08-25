@@ -26,10 +26,10 @@ public class UploadPhoto : MonoBehaviour {
     void PostData() 
     {
         UserData data = new UserData();
-        data.userName = userNameInputField.text;
-        data.email = emailInputField.text;
-        data.password = passwordInputField.text;
-        data.phoneNumber = phoneNumberInputField.text;
+        // data.userName = userNameInputField.text;
+        // data.email = emailInputField.text;
+        // data.password = passwordInputField.text;
+        // data.phoneNumber = phoneNumberInputField.text;
         string json = JsonUtility.ToJson(data, true);    
         
         StartCoroutine(PostData_Coroutine("http://xaramyhost.tk:4000/users", json));

@@ -2,8 +2,7 @@
 
 public class UserData
 {
-    public string userName;
-    public string email;
-    public string password;
-    public string phoneNumber;
+    public string comment;
+    public string avatar;
+    public string suiteId;
 }

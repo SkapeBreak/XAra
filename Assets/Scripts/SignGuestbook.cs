@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine.UI;
 using SimpleJSON;
 using System;
+using SimpleFileBrowser;
  
 public class SignGuestbook : MonoBehaviour {
     
@@ -33,10 +34,11 @@ public class SignGuestbook : MonoBehaviour {
     public void PostData() 
     {
         UserData data = new UserData();
-        data.userName = commentInput.text;
-        string json = JsonUtility.ToJson(data, true);    
+        data.comment = commentInput.text;
+        data.suiteId = "suite888"; //PersistentManager.Instance.currentSuiteId;
+        data.avatar = SimpleFileBrowser.FileBrowser.Result[0];
 
-        Debug.Log(data);
+        string json = JsonUtility.ToJson(data, true);    
         
         StartCoroutine(PostDataCoroutine("http://www.localhost:5000/guest-book/store", json));
     }

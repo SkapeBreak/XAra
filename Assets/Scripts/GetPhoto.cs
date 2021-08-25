@@ -58,6 +58,8 @@ public class GetPhoto : MonoBehaviour
 
                                 photoCard.GetComponent<RawImage>().texture = photoTexture;
 
+                                photoCard.GetComponent<InputField>().text = photoParse["response"][i]["comment"];
+
                                 photoCard.transform.SetParent(photoCardTemplate.transform.parent, false);
                             }
                         }
