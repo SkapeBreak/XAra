@@ -20,7 +20,7 @@ public class GetPhoto : MonoBehaviour
 
     IEnumerator GetPhotoData()
     {
-        string uri = "http://localhost:5000/guest-book";
+        string uri = "http://xaramyhost.tk:4000/guest-book";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -36,9 +36,9 @@ public class GetPhoto : MonoBehaviour
 
                  for (int i = 0; i < photoParse["response"].Count; i++) 
                  {
-                     if (photoParse["response"][i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
-                    {
-                        string uriPhotos = "http://localhost:5000/" + photoParse["response"][i]["avatar"];
+                    //  if (photoParse["response"][i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
+                    // {
+                        string uriPhotos = "http://xaramyhost.tk:4000/" + photoParse["response"][i]["avatar"];
 
                         using(UnityWebRequest photoRequest = UnityWebRequestTexture.GetTexture(uriPhotos))
                         {
@@ -64,7 +64,7 @@ public class GetPhoto : MonoBehaviour
                             }
                         }
                     }
-                 }
+                //  }
             }
         }
     } 

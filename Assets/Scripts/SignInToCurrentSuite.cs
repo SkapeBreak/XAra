@@ -25,14 +25,14 @@ public class SignInToCurrentSuite : MonoBehaviour
             Instance = this;                
             Application.deepLinkActivated += onDeepLinkActivated;
 
-            if (!string.IsNullOrEmpty("unitydl://mylink?suite888"))//"unitydl://mylink?suite888"
+            if (!string.IsNullOrEmpty(Application.absoluteURL))//"unitydl://mylink?suite888"
             {
-                onDeepLinkActivated("unitydl://mylink?suite888");//Application.absoluteURL
+                onDeepLinkActivated(Application.absoluteURL);//Application.absoluteURL
             }
             else deeplinkURL = "[none]";
 
             DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(warningPopUp);
+            // DontDestroyOnLoad(warningPopUp);
         }
         else
         {
@@ -40,10 +40,10 @@ public class SignInToCurrentSuite : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartCoroutine(authSuite());
-    }
+    // private void Start()
+    // {
+    //     StartCoroutine(authSuite());
+    // }
 
     private void onDeepLinkActivated(string url)
     {
@@ -51,12 +51,14 @@ public class SignInToCurrentSuite : MonoBehaviour
         suiteId = deeplinkURL.Split("?"[0])[1];
         Debug.Log(suiteId);
 
-        SceneManager.LoadScene("HomePage");
+        StartCoroutine(authSuite());
+
+        SceneManager.LoadScene("HostRecommendations");
     }
 
     IEnumerator authSuite()
     {
-        string uri = "http://localhost:5000/suites";
+        string uri = "http://xaramyhost.tk:4000/suites";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -76,7 +78,7 @@ public class SignInToCurrentSuite : MonoBehaviour
                     if (suitesParse[i]["suiteId"] == suiteId)
                     {
                         Debug.Log("Auth Succeeded");
-
+                        
                         validSuiteId = true;
                         break;
                     }

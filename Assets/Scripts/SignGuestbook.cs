@@ -35,7 +35,7 @@ public class SignGuestbook : MonoBehaviour {
     public void PostData() 
     {
         addedPhoto.SetActive(true);
-        
+
         UserData data = new UserData();
         data.comment = commentInput.text;
         data.suiteId = "suite888"; //PersistentManager.Instance.currentSuiteId;
@@ -49,7 +49,7 @@ public class SignGuestbook : MonoBehaviour {
 
         Debug.Log("json " + json);  
         
-        StartCoroutine(PostDataCoroutine("http://www.localhost:5000/guest-book/store", json));
+        StartCoroutine(PostDataCoroutine("http://xaramyhost.tk:4000/guest-book/store", json));
     }
      
     IEnumerator PostDataCoroutine(string url, string bodyJsonString) 
@@ -65,3 +65,18 @@ public class SignGuestbook : MonoBehaviour {
         Debug.Log("Status Code: " + request.responseCode);
     }
 }
+
+// WWWForm form = new WWWForm();
+//     int i = 0;
+//     foreach (FileDetails file in files)
+//     {
+//         i++;
+//         UnityWebRequest localFile = UnityWebRequest.Get(@"file://" + SimpleFileBrowser.FileBrowser.Result[0]);
+//         yield return localFile;
+//         form.AddBinaryData("image[]", localFile.downloadHandler.data, file.fileName, "image/" + file.fileType);
+//     }
+
+//     UnityWebRequest request = UnityWebRequest.Post(api_url, form);
+//     request.SetRequestHeader("Content-Type", "application/json");
+//     request = APIHelper.setAuthToRequest(request, AuthType.BASIC);
+//     request.SendWebRequest();

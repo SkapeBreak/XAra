@@ -36,7 +36,7 @@ public class GetManualList : MonoBehaviour
     {
         // endpoint = EventSystem.current.currentSelectedGameObject;
 
-        string uri = "http://localhost:5000/manuals";
+        string uri = "http://xaramyhost.tk:4000/manuals";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {

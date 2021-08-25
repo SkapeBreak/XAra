@@ -10,7 +10,6 @@ public class ChangeScene : MonoBehaviour
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {
-            // Debug.Log(suiteId);
             SceneManager.LoadScene("HostRecommendations");
         }
     }
@@ -79,6 +78,13 @@ public class ChangeScene : MonoBehaviour
         // if (suiteId != "NotFound")
         {
         SceneManager.LoadScene("ManualPage");
+        }
+    }
+
+    public void SignIn()
+    {
+        {
+        SceneManager.LoadScene("QRCodePage");
         }
     }
 }

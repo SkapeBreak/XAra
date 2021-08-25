@@ -77,7 +77,7 @@ public class GetAmenityList : MonoBehaviour
 
         endpoint = EventSystem.current.currentSelectedGameObject;
 
-        string uri = "http://localhost:5000/" + endpoint.name;
+        string uri = "http://xaramyhost.tk:4000/" + endpoint.name;
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -93,8 +93,8 @@ public class GetAmenityList : MonoBehaviour
 
                 for (int i = 0; i < amenitiesParse.Count; i++) 
                 {
-                    if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
-                    {
+                    // if (amenitiesParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
+                    // {
                         Destroy(GameObject.Find(i.ToString()));
 
                         GameObject amenityCard = Instantiate(amenityCardTemplate) as GameObject;
@@ -111,7 +111,7 @@ public class GetAmenityList : MonoBehaviour
                         amenityCard.GetComponent<AmenityButton>().SetAmenityIcon(endpoint.name + "/" + i.ToString());
 
                         amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
-                    }
+                    // }
                 }
             }
         }
@@ -119,7 +119,7 @@ public class GetAmenityList : MonoBehaviour
 
     IEnumerator GetRestaurantData()
     {
-        string uri = "http://localhost:5000/restaurants";
+        string uri = "http://xaramyhost.tk:4000/restaurants";
 
         using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -135,8 +135,8 @@ public class GetAmenityList : MonoBehaviour
 
                 for (int i = 0; i < restaurantsParse.Count; i++) 
                 {
-                    if (restaurantsParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
-                    {
+                    // if (restaurantsParse[i]["suiteId"] == PersistentManager.Instance.currentSuiteId)
+                    // {
                         GameObject amenityCard = Instantiate(amenityCardTemplate) as GameObject;
 
                         amenityCard.SetActive(true);
@@ -151,7 +151,7 @@ public class GetAmenityList : MonoBehaviour
                         amenityCard.GetComponent<AmenityButton>().SetAmenityIcon("restaurants/" + i.ToString());
 
                         amenityCard.transform.SetParent(amenityCardTemplate.transform.parent, false);
-                    }
+                    // }
                 }
             }
         }
