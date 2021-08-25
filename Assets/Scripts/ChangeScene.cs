@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
-{   
+{  
     public void ChangeToHostRecommendations()
     {
         // string suiteId = PersistentManager.Instance.currentSuiteId;
@@ -83,8 +83,40 @@ public class ChangeScene : MonoBehaviour
 
     public void SignIn()
     {
-        {
         SceneManager.LoadScene("QRCodePage");
+    }
+
+    public void ChangeToAdminPanel()
+    {
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
+        {
+        SceneManager.LoadScene("AdminPanel");
+        }
+    }
+
+    public void ChangeToAdmintickyNotesPage()
+    {
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
+        {      
+        SceneManager.LoadScene("AdminStickyNotesPage");
+        }
+    }
+    public void ChangeToAdminNavigationPage()
+    {
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
+        {
+        SceneManager.LoadScene("AdminNavigationPage");
+        }
+    }
+    public void ChangeToAdminQRCodePage()
+    {
+        // string suiteId = PersistentManager.Instance.currentSuiteId;
+        // if (suiteId != "NotFound")
+        {
+        SceneManager.LoadScene("AdminQRCodePage");
         }
     }
 }

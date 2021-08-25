@@ -28,6 +28,7 @@ public class CanvasManager : Singleton<CanvasManager>
         SwitchCanvas(CanvasType.MainMenu);
     }
 
+
     public void SwitchCanvas(CanvasType _type)
     {
         if (lastActiveCanvas != null)
