@@ -100,6 +100,7 @@ public class ChangeScene : MonoBehaviour
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {      
+        SceneManager.UnloadScene("AdminPanel");
         SceneManager.LoadScene("AdminStickyNotesPage");
         }
     }
@@ -108,6 +109,7 @@ public class ChangeScene : MonoBehaviour
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {
+        SceneManager.UnloadScene("AdminPanel");
         SceneManager.LoadScene("AdminNavigationPage");
         }
     }
@@ -116,6 +118,7 @@ public class ChangeScene : MonoBehaviour
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {
+        SceneManager.UnloadScene("AdminPanel");
         SceneManager.LoadScene("AdminQRCodePage");
         }
     }
