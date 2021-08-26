@@ -26,7 +26,7 @@ public class ChangeScene : MonoBehaviour
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {
-        SceneManager.LoadScene("QRCodePage 1");
+        SceneManager.LoadScene("QRCodePage");
         }
     }
     public void ChangeToAR()
@@ -68,7 +68,7 @@ public class ChangeScene : MonoBehaviour
         // string suiteId = PersistentManager.Instance.currentSuiteId;
         // if (suiteId != "NotFound")
         {
-        SceneManager.LoadScene("NavigationPage 1");
+        SceneManager.LoadScene("NavigationPage");
         }
     }
     
@@ -83,7 +83,7 @@ public class ChangeScene : MonoBehaviour
 
     public void SignIn()
     {
-        SceneManager.LoadScene("QRCodePage 1");
+        SceneManager.LoadScene("QRCodePage");
     }
 
     public void ChangeToAdminPanel()

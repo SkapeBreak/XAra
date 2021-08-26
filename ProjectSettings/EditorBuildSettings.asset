@@ -5,24 +5,42 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HomePage.unity
     guid: 7759de288f5d4ee449a0ca5e2244944a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HostRecommendations.unity
     guid: 05e9fe39e4cacaf4c956e5c1d3986a2d
-  - enabled: 1
-    path: Assets/Scenes/QRCodePage 1.unity
+  - enabled: 0
+    path: Assets/Scenes/QRCodePage.unity
     guid: dfadadc7421d445f888c7594b88d519a
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/StickyNotesPage.unity
+    guid: 41383623771544cb5bbf6df7ae95e49b
+  - enabled: 0
+    path: Assets/Scenes/NavigationPage.unity
+    guid: 4f818f5bf5b92474fa2cb5ab9ebd640a
+  - enabled: 0
     path: Assets/Scenes/ManualPage.unity
     guid: 68554db2f9c494af28c52d194b9f9c2c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/bookcanvaspage.unity
     guid: a2d97ea3e3c454db58edc099a742a38b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/eAR.unity
     guid: 49ac844205ad2334fb6b93e2b54b0354
+  - enabled: 1
+    path: Assets/Scenes/AdminPanel.unity
+    guid: d682e12405041a348b1c0ad252fca639
+  - enabled: 1
+    path: Assets/Scenes/AdminQRCodePage.unity
+    guid: 8150b5f8b1996554ebccf8da1d4e9fef
+  - enabled: 1
+    path: Assets/Scenes/AdminStickyNotesPage.unity
+    guid: 5f6c8cb48c5fe4df7be1cf0724b8642f
+  - enabled: 1
+    path: Assets/Scenes/AdminNavigationPage.unity
+    guid: 75e66f313d4513d46ac5ea03cf0c7c85
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 383ffc59f680c854bb01aa913afaa84c, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d6fc130ece2d7874c9e2205aac02ef65, type: 2}

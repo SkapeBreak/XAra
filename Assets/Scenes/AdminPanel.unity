@@ -430,7 +430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa60a41e66b9247c0b978ebf0a7effa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adminCanvas: {fileID: 1274115936}
 --- !u!4 &3534869
 Transform:
   m_ObjectHideFlags: 0
@@ -27081,7 +27080,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3534868}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: ChangeToASdmintickyNotesPage
+        m_MethodName: ChangeToAdmintickyNotesPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
